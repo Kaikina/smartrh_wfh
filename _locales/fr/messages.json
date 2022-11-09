@@ -1,0 +1,11 @@
+{
+  "appDesc": {
+    "message": "Vous permet de différencier les jours de télétravail des jours de congés."
+  },
+  "appName": {
+    "message": "Better SmartRH Jours de télétravail"
+  },
+  "popupTitle": {
+    "message": "Choisissez la couleur pour vos jours de TT"
+  }
+}

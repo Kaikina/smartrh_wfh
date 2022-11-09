@@ -1,0 +1,259 @@
+* {
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-size: calc(12px + (32 - 12) * (100vw - 320px) / (1280 - 320));
+}
+
+body,
+input {
+    font: 1em/1.5 sans-serif;
+}
+
+body {
+    background: linear-gradient(-45deg, #e3e4e8, #c7cad1);
+    height: auto;
+    width: 250px;
+    display: grid;
+    overflow-x: hidden;
+    place-items: center;
+    margin: 35px;
+}
+
+img {
+    margin-bottom: 35px;
+}
+
+.title {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cp {
+    background: linear-gradient(90deg, #676e7e, #9da2af);
+    border-radius: 2em;
+    box-shadow: 0.1em 0.1em 0 #b9bcc6, 0.25em 0.25em 0 #676e7e, 0.375em 0.375em 0.375em rgba(0, 0, 0, 0.6);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    width: 16em;
+    height: 16em;
+    transform: rotateX(45deg) rotateZ(45deg);
+}
+.cp__color {
+    padding: 0.5em;
+    -webkit-tap-highlight-color: transparent;
+}
+.cp__color, .cp__color-input {
+    display: block;
+}
+.cp__color-input {
+    border-radius: 50%;
+    position: relative;
+    width: 3em;
+    height: 3em;
+    transform: translate3d(-0.5em, -0.5em, 0);
+    transform-style: preserve-3d;
+    transition: transform 0.15s linear;
+    -webkit-appearance: none;
+    appearance: none;
+}
+.cp__color-input:after {
+    border-radius: inherit;
+    content: "";
+    display: block;
+    position: absolute;
+    inset: 0;
+    transform: translate3d(0.25em, 0.25em, -1px);
+    transition: box-shadow 0.15s linear;
+}
+.cp__color-input:checked {
+    transform: translate3d(-0.25em, -0.25em, 0);
+}
+.cp__color-input:focus {
+    outline: transparent;
+}
+.cp__color--brown .cp__color-input {
+    background-image: linear-gradient(90deg, #A52A2A, #A0522D);
+}
+.cp__color--brown .cp__color-input:after {
+    background: linear-gradient(0deg, #A0522D, #800000, #A52A2A);
+    box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.9), 0.5em 0.5em 0.5em rgb(160, 82, 45, 0.6);
+}
+.cp__color--brown .cp__color-input:checked:after {
+    box-shadow: 0 0 0.125em rgba(0, 0, 0, 0.9), 0.25em 0.25em 0.25em rgba(121, 50, 6, 0.6);
+}
+.cp__color--red .cp__color-input {
+    background-image: linear-gradient(90deg, #DC143C, #FF0000);
+}
+.cp__color--red .cp__color-input:after {
+    background: linear-gradient(0deg, #FF0000, #8B0000, #B22222);
+    box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.9), 0.5em 0.5em 0.5em rgb(178, 34, 34, 0.6);
+}
+.cp__color--red .cp__color-input:checked:after {
+    box-shadow: 0 0 0.125em rgba(0, 0, 0, 0.9), 0.25em 0.25em 0.25em rgb(178, 34, 34, 0.6);
+}
+.cp__color--orange .cp__color-input {
+    background-image: linear-gradient(90deg, #FF7F50, #FF6347);
+}
+.cp__color--orange .cp__color-input:after {
+    background: linear-gradient(0deg, #FF6347, #FF4500, #FF8C00);
+    box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.9), 0.5em 0.5em 0.5em rgb(255, 165, 0, 0.6);
+}
+.cp__color--orange .cp__color-input:checked:after {
+    box-shadow: 0 0 0.125em rgba(0, 0, 0, 0.9), 0.25em 0.25em 0.25em rgb(255, 165, 0, 0.6);
+}
+.cp__color--yellow .cp__color-input {
+    background-image: linear-gradient(90deg, #FFE4B5, #FFDAB9);
+}
+.cp__color--yellow .cp__color-input:after {
+    background: linear-gradient(0deg, #FFDAB9, #BDB76B, #EEE8AA);
+    box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.9), 0.5em 0.5em 0.5em rgb(240, 230, 140, 0.6);
+}
+.cp__color--yellow .cp__color-input:checked:after {
+    box-shadow: 0 0 0.125em rgba(0, 0, 0, 0.9), 0.25em 0.25em 0.25em rgb(240, 230, 140, 0.6);
+}
+.cp__color--green .cp__color-input {
+    background-image: linear-gradient(90deg, #689108, #9cda0b);
+}
+.cp__color--green .cp__color-input:after {
+    background: linear-gradient(0deg, #456105, black, #233003);
+    box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.9), 0.5em 0.5em 0.5em rgba(104, 145, 8, 0.6);
+}
+.cp__color--green .cp__color-input:checked:after {
+    box-shadow: 0 0 0.125em rgba(0, 0, 0, 0.9), 0.25em 0.25em 0.25em rgba(104, 145, 8, 0.6);
+}
+.cp__color--lime .cp__color-input {
+    background-image: linear-gradient(90deg, #93f425, #b7f76e);
+}
+.cp__color--lime .cp__color-input:after {
+    background: linear-gradient(0deg, #7ada0b, #447906, #5faa09);
+    box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.9), 0.5em 0.5em 0.5em rgba(147, 244, 37, 0.6);
+}
+.cp__color--lime .cp__color-input:checked:after {
+    box-shadow: 0 0 0.125em rgba(0, 0, 0, 0.9), 0.25em 0.25em 0.25em rgba(147, 244, 37, 0.6);
+}
+.cp__color--cyan .cp__color-input {
+    background-image: linear-gradient(90deg, #25e9f4, #6ef0f7);
+}
+.cp__color--cyan .cp__color-input:after {
+    background: linear-gradient(0deg, #0bd0da, #067379, #09a2aa);
+    box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.9), 0.5em 0.5em 0.5em rgba(37, 233, 244, 0.6);
+}
+.cp__color--cyan .cp__color-input:checked:after {
+    box-shadow: 0 0 0.125em rgba(0, 0, 0, 0.9), 0.25em 0.25em 0.25em rgba(37, 233, 244, 0.6);
+}
+.cp__color--lightblue .cp__color-input {
+    background-image: linear-gradient(90deg, #25b6f4, #6ecef7);
+}
+.cp__color--lightblue .cp__color-input:after {
+    background: linear-gradient(0deg, #0b9cda, #065779, #0979aa);
+    box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.9), 0.5em 0.5em 0.5em rgba(37, 182, 244, 0.6);
+}
+.cp__color--lightblue .cp__color-input:checked:after {
+    box-shadow: 0 0 0.125em rgba(0, 0, 0, 0.9), 0.25em 0.25em 0.25em rgba(37, 182, 244, 0.6);
+}
+.cp__color--blue .cp__color-input {
+    background-image: linear-gradient(90deg, #6495ED, #7B68EE);
+}
+.cp__color--blue .cp__color-input:after {
+    background: linear-gradient(0deg, #7B68EE, #4169E1, #4169E1);
+    box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.9), 0.5em 0.5em 0.5em rgb(65, 105, 225, 0.6);
+}
+.cp__color--blue .cp__color-input:checked:after {
+    box-shadow: 0 0 0.125em rgba(0, 0, 0, 0.9), 0.25em 0.25em 0.25em rgb(65, 105, 225, 0.6);
+}
+.cp__color--purple .cp__color-input {
+    background-image: linear-gradient(90deg, #a23df5, #9932CC);
+}
+.cp__color--purple .cp__color-input:after {
+    background: linear-gradient(0deg, #9932CC, #800080, #8B008B);
+    box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.9), 0.5em 0.5em 0.5em rgb(153, 50, 204, 0.6);
+}
+.cp__color--purple .cp__color-input:checked:after {
+    box-shadow: 0 0 0.125em rgba(0, 0, 0, 0.9), 0.25em 0.25em 0.25em rgb(153, 50, 204, 0.6);
+}
+.cp__color--magenta .cp__color-input {
+    background-image: linear-gradient(90deg, #f425e9, #f76ef0);
+}
+.cp__color--magenta .cp__color-input:after {
+    background: linear-gradient(0deg, #da0bd0, #790673, #aa09a2);
+    box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.9), 0.5em 0.5em 0.5em rgba(244, 37, 233, 0.6);
+}
+.cp__color--magenta .cp__color-input:checked:after {
+    box-shadow: 0 0 0.125em rgba(0, 0, 0, 0.9), 0.25em 0.25em 0.25em rgba(244, 37, 233, 0.6);
+}
+.cp__color--pink .cp__color-input {
+    background-image: linear-gradient(90deg, #f986a6, #fccfdc);
+}
+.cp__color--pink .cp__color-input:after {
+    background: linear-gradient(0deg, #f65583, #da0b46, #f4255f);
+    box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.9), 0.5em 0.5em 0.5em rgba(249, 134, 166, 0.6);
+}
+.cp__color--pink .cp__color-input:checked:after {
+    box-shadow: 0 0 0.125em rgba(0, 0, 0, 0.9), 0.25em 0.25em 0.25em rgba(249, 134, 166, 0.6);
+}
+.cp__color--black .cp__color-input {
+    background-image: linear-gradient(90deg, #778899, #708090);
+}
+.cp__color--black .cp__color-input:after {
+    background: linear-gradient(0deg, #708090, black, #2F4F4F);
+    box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.9), 0.5em 0.5em 0.5em rgb(112, 128, 144, 0.6);
+}
+.cp__color--black .cp__color-input:checked:after {
+    box-shadow: 0 0 0.125em rgba(0, 0, 0, 0.9), 0.25em 0.25em 0.25em rgb(112, 128, 144, 0.6);
+}
+.cp__color--gray .cp__color-input {
+    background-image: linear-gradient(90deg, #4d4d4d, #737373);
+}
+.cp__color--gray .cp__color-input:after {
+    background: linear-gradient(0deg, #333333, black, #1a1a1a);
+    box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.9), 0.5em 0.5em 0.5em rgba(77, 77, 77, 0.6);
+}
+.cp__color--gray .cp__color-input:checked:after {
+    box-shadow: 0 0 0.125em rgba(0, 0, 0, 0.9), 0.25em 0.25em 0.25em rgba(77, 77, 77, 0.6);
+}
+.cp__color--lightgray .cp__color-input {
+    background-image: linear-gradient(90deg, #D3D3D3, #C0C0C0);
+}
+.cp__color--lightgray .cp__color-input:after {
+    background: linear-gradient(0deg, #C0C0C0, #808080, #A9A9A9);
+    box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.9), 0.5em 0.5em 0.5em rgb(192, 192, 192, 0.6);
+}
+.cp__color--lightgray .cp__color-input:checked:after {
+    box-shadow: 0 0 0.125em rgba(0, 0, 0, 0.9), 0.25em 0.25em 0.25em rgb(192, 192, 192, 0.6);
+}
+.cp__color--white .cp__color-input {
+    background-image: linear-gradient(90deg, #808080, DarkGray);
+}
+.cp__color--white .cp__color-input:after {
+    background: linear-gradient(0deg, #808080, #778899, #696969);
+    box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.9), 0.5em 0.5em 0.5em rgb(128, 128, 128, 0.6);
+}
+.cp__color--white .cp__color-input:checked:after {
+    box-shadow: 0 0 0.125em rgba(0, 0, 0, 0.9), 0.25em 0.25em 0.25em rgb(128, 128, 128, 0.6);
+}
+.cp__sr-only {
+    clip: rect(1px, 1px, 1px, 1px);
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(-45deg, #2e3138, #17181c);
+    }
+
+    .cp {
+        background: linear-gradient(90deg, #2e3138, #5c6270);
+        box-shadow: 0.1em 0.1em 0 #737a8c, 0.25em 0.25em 0 #2e3138, 0.375em 0.375em 0.375em rgba(0, 0, 0, 0.6);
+    }
+}
